@@ -3,6 +3,7 @@ import Layout from './Layout';
 import { Route, Routes } from 'react-router-dom';
 import BlogPage from './Pages/BlogPage';
 import AuthorPage from './Pages/AuthorPage';
+import ScrollToTop from './components/ScrollToTop';
 
 
 
@@ -11,6 +12,7 @@ import AuthorPage from './Pages/AuthorPage';
 function App() {
   return (
     <Layout>
+      <ScrollToTop/>
       <Routes>
 
         <Route path='/' element={<HomePage/>}/>

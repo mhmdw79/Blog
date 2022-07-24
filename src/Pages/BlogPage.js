@@ -24,7 +24,7 @@ function BlogPage() {
             <Grid container>
                   <Grid item xs={12} mt={9} display="flex" justifyContent="space-between">
                       <Typography component="h2" variant='h4' color="primary" fontWeight={700}>{data.post.title}</Typography>
-                      <ArrowBackRoundedIcon onClick={()=>navigate(-1)}/>
+                      <ArrowBackRoundedIcon style={{cursor:"pointer"}} onClick={()=>navigate(-1)}/>
                   </Grid>
                   <Grid item xs={12} mt={6}>
                     <img src={data.post.coverPhoto.url} alt={data.post.slug} style={{width:"100%",borderRadius:16}}/>
