@@ -8,6 +8,8 @@ import { Container, height } from '@mui/system';
 import { Avatar, Box, Grid, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import sanitizeHtml from "sanitize-html";
+import CommentForm from '../components/CommentForm';
+import Comments from '../components/Comments';
 
 function BlogPage() {
   const { slug } = useParams();
@@ -17,7 +19,6 @@ function BlogPage() {
   const navigate = useNavigate()
   if (error) return <h4>ERROR</h4>;
   if (loading) return <Loader/>;
-  console.log(data);
   return (
     <Container maxWidth="lg">
             <Grid container>
@@ -40,6 +41,12 @@ function BlogPage() {
                       <div dangerouslySetInnerHTML={{__html:sanitizeHtml(data.post.contentText.html)}}>
 
                       </div>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <CommentForm slug={slug}/>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Comments slug={slug}/>
                   </Grid>
             </Grid>
     </Container>

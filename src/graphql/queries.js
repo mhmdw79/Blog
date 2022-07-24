@@ -78,4 +78,18 @@ query getPost($slug:String!){
 }
 `
 
-export {GET_POSTS,GET_AUTHORS,GET_AUTHOR,GET_POST}
+const GET_COMMENT = gql`
+query getcomment($slug:String!) {
+  comments(where: {post: {slug: $slug}}) {
+    id
+    name
+    email
+    text
+  }
+}
+
+
+`
+
+
+export {GET_POSTS,GET_AUTHORS,GET_AUTHOR,GET_POST,GET_COMMENT}
